@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Speech Translator</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="title">AI Speech Translator</div>
+  <div class="subtitle">OTT-style Multilingual Translation</div>
+</header>
+
+<main class="container">
+
+  <!-- MODE BAR -->
+  <div class="mode-bar">
+    <button class="mode active" data-mode="audio">Audio</button>
+    <button class="mode" data-mode="video">Video</button>
+    <button class="mode" data-mode="mic">Mic</button>
+    <button class="mode" data-mode="url">URL</button>
+  </div>
+
+  <!-- LANGUAGE -->
+  <div class="card">
+    <label>Target Language</label>
+    <select id="language" class="lang-select">
+      <option value="ta">Tamil (தமிழ்)</option>
+      <option value="hi">Hindi (हिन्दी)</option>
+      <option value="te">Telugu (తెలుగు)</option>
+      <option value="ml">Malayalam (മലയാളം)</option>
+      <option value="kn">Kannada (ಕನ್ನಡ)</option>
+      <option value="bn">Bengali (বাংলা)</option>
+      <option value="gu">Gujarati (ગુજરાતી)</option>
+      <option value="mr">Marathi (मराठी)</option>
+      <option value="pa">Punjabi (ਪੰਜਾਬੀ)</option>
+      <option value="ur">Urdu (اردو)</option>
+      <option value="or">Odia (ଓଡ଼ିଆ)</option>
+      <option value="as">Assamese (অসমীয়া)</option>
+    </select>
+  </div>
+
+  <!-- AUDIO -->
+  <div class="card input-card" id="audioCard">
+    <input type="file" id="audioInput" accept="audio/*">
+    <button class="primary" id="audioBtn">Translate Audio</button>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="card input-card hidden" id="videoCard">
+    <input type="file" id="videoInput" accept="video/*">
+    <button class="primary" id="videoBtn">Translate Video</button>
+
+    <!-- Video Player -->
+    <div class="video-wrapper">
+      <video id="video" controls playsinline></video>
+      <div id="subtitleOverlay"></div>
+    </div>
+  </div>
+
+  <!-- MIC -->
+  <div class="card input-card hidden" id="micCard">
+    <button id="micStart" class="danger">Start</button>
+    <button id="micStop" disabled>Stop</button>
+    <button id="micBtn" class="primary" disabled>Translate</button>
+    <div class="hint" id="micStatus">Idle</div>
+  </div>
+
+  <!-- URL -->
+  <div class="card input-card hidden" id="urlCard">
+    <input type="text" id="urlInput" placeholder="Paste YouTube URL">
+    <button class="primary" id="urlBtn">Translate URL</button>
+  </div>
+
+  <!-- STATUS -->
+  <div class="status" id="status">Waiting for input…</div>
+
+  <!-- OUTPUT -->
+  <div class="card">
+    <h3>Original</h3>
+    <div class="output" id="originalText"></div>
+
+    <h3>Translated</h3>
+    <div class="output highlight" id="translatedText"></div>
+
+    <audio id="audio" controls></audio>
+
+    <!-- DOWNLOAD -->
+    <div class="download-bar">
+      <a id="downloadAudio" class="download-btn" style="display:none;">
+        ⬇ Download Translated Audio
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
