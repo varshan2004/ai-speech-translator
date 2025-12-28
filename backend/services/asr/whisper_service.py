@@ -3,7 +3,7 @@ import librosa
 import numpy as np
 from transformers import WhisperProcessor, WhisperForConditionalGeneration
 
-MODEL_PATH = "models/whisper_tiny_stage2"
+MODEL_PATH = "openai/whisper-tiny"
 
 CHUNK_LENGTH = 30  # seconds (Whisper safe window)
 SAMPLE_RATE = 16000
