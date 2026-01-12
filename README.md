@@ -9,6 +9,10 @@ It supports English and Hindi speech input and translates the content into 12+ I
 
 The system is designed with a modular backend architecture, an interactive OTT-style web interface, and robust audio preprocessing, making it suitable for real-world multilingual and multimedia applications.
 
+Datasets Used
+english-https://www.kaggle.com/datasets/mozillaorg/common-voice
+hindi-https://huggingface.co/datasets/ai4bharat/Lahaja
+
 🔁 Important Note on ASR Model Usage
 
 ⚠️ The ASR model was fine-tuned locally and is not included in this repository due to size and environment constraints.
